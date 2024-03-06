@@ -1,0 +1,3 @@
+export enum StatusClaim {
+ OPENED="OPENED", ASSIGNED="ASSIGNED", CLOSED="CLOSED"
+}

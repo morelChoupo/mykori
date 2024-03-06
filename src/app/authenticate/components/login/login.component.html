@@ -1,0 +1,50 @@
+<section class="kori-login-container">
+  <section class="kori-login-window">
+    <div class="kori-login-left">
+      <div class="kori-logo">
+        <a href="#"><img src="assets/images/kori/kori-logo.png"></a>
+      </div>
+      <p>
+        Suivez la performance de vos placements en temps réel grâce&nbsp;à votre plateforme <b>myKORI</b>
+      </p>
+    </div>
+    <div class="kori-login-right">
+      <h2>Connexion</h2>
+      <form  class="wow fadeInUp" [formGroup]="form" (ngSubmit)="login()">
+        <div class="form-group mb-3">
+        <input type="text" name="username" id="username" required="" placeholder="Email"
+               [ngClass]="{'is-invalid': submitted && f['login'].errors}" formControlName="login">
+          <div *ngIf="submitted && f['login'].errors" class="invalid-feedback">
+            <div *ngIf="f['login'].errors?.['required']">Champ Requis</div>
+            <div *ngIf="f['login'].errors?.['email']"> L'adresse mail est invalide</div>
+
+          </div>
+        </div>
+        <div class="form-group mb-3">
+        <input type="password" name="password" id="password" required="" placeholder="Password" formControlName="password"
+               [type]="showPass? 'text' : 'password'" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f['password'].errors} ">
+          <span>
+                                  <i class="fa fa-eye" [ngClass]="{'fa-eye-slash': !showPass, 'fa-eye': showPass }"
+                                     (click)="setVisiblePass()"></i>
+                                </span>
+          <div *ngIf="submitted && f['password'].errors " class="invalid-feedback">
+            <div *ngIf="f['password'].errors?.['required'] ">Champ Requis</div>
+          </div>
+        </div>
+        <button type="submit" class="login-button">
+          <ng-container *ngIf="!isLoading">
+
+            <span class="indicator-label">Se connecter</span>
+          </ng-container>
+          <ng-container *ngIf="isLoading">
+                                         <span clas="indicator-progress" [style.display]="'block'">
+                                              Patientez s'il vous plait...{{ " " }}
+                                           <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+          </ng-container>
+
+        </button>
+      </form>
+    </div>
+  </section>
+</section>

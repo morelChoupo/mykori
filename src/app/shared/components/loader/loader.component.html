@@ -1,0 +1,13 @@
+<div class="page-loader-wrapper" *ngIf="loaderService.loading$ | async">
+  <div class="loader">
+    <div class="m-t-30">
+      <img
+        src="../../../../assets/images/loader-cube.gif"
+        width="80"
+        height="80"
+        alt="loader"
+      />
+    </div>
+    <p>Attendez un instant...</p>
+  </div>
+</div>

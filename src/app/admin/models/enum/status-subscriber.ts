@@ -1,0 +1,8 @@
+export enum StatusSubscriber {
+    CREATING = "CREATING",
+    CREATED = "CREATED",
+    ACTIVE = "ACTIVE",
+    BLOCKED = "BLOCKED",
+    DELETED = "DELETED",
+    AWAITING_KYC_VALIDATION = "AWAITING_KYC_VALIDATION"
+}
